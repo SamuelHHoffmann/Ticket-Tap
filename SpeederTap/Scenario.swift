@@ -17,9 +17,9 @@ class Scenario {
     
     static let night = false
     
-    static let raining = 0
+    static let raining = 1
     
-    static let coloredCars = false
+    static let coloredCars = true
     
     static let rainbowCars = false
     
@@ -37,7 +37,7 @@ class Scenario {
     
     static var allwaysSpeeding = false
     
-    static let solar = true
+    static let solar = false
     
     
     static var inAlert = false
