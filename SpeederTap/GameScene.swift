@@ -784,6 +784,18 @@ class GameScene: SKScene {
             
             versionUpdateHandler()
             
+        }else if(current == 1.9){
+            
+            UserDefaults.standard.set(2.0, forKey: "VersionNumber")
+            
+            difficulty = 1
+            uploadData()
+            downloadData()
+            
+            print("Log: updated 2.0")
+            
+            versionUpdateHandler()
+            
         }else{
             //all up to date
             

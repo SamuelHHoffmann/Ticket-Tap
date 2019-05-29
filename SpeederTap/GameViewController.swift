@@ -13,6 +13,7 @@ import GameKit
 
 class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     
+    @IBOutlet weak var nestedView: SKView!
     
     @objc var globalScene = SKScene()
     @objc var firstPause = true
@@ -31,7 +32,19 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.pause), name: NSNotification.Name(rawValue: "pause"), object: nil)
         
         
-        if let view = self.view as! SKView? {
+        if let backgroundView = self.view as? SKView {
+            
+            backgroundView.backgroundColor = UIColor(displayP3Red: 28/255, green: 28/255, blue: 28/255, alpha: 1)
+            
+            let tempScene = SKScene(size: self.view.frame.size)
+            tempScene.backgroundColor = UIColor(displayP3Red: 28/255, green: 28/255, blue: 28/255, alpha: 1)
+            tempScene.scaleMode = .fill
+            
+            backgroundView.presentScene(tempScene)
+        }
+        
+        
+        if let view = self.nestedView {
             // Load the SKScene from 'GameScene.sks'
             view.sizeToFit()
             //view.safeAreaInsets

@@ -52,6 +52,6 @@ class Scenario {
     
     
     
-    static let version = 1.9
+    static let version = 2.0
     
 }
