@@ -47,23 +47,20 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         if let view = self.nestedView {
             // Load the SKScene from 'GameScene.sks'
             view.sizeToFit()
+//            view.decreaseSize(nil)
+//            view.decreaseSize(nil)
+//            view.decreaseSize(nil)
+//            view.decreaseSize(nil)
+//            view.decreaseSize(nil)
+            
             //view.safeAreaInsets
             if let scene = SKScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
                 globalScene = scene
                 
-//                if self.view.frame.width == 812 && self.view.frame.height == 375.0 {
-//                    //iphone 10
-//
-//                    globalScene.scaleMode = .aspectFit
-//
-//                }else{
-//
-//                }
-                
                 globalScene.scaleMode = .aspectFill
                 
-                
+//                globalScene.size = CGSize(width: globalScene.size.width - (20*(globalScene.size.width/globalScene.size.height)), height: globalScene.size.height - 20)
                 
                 //globalScene.sc
                 

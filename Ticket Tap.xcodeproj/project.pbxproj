@@ -10,7 +10,6 @@
 		9030F7081E58E0290039B32A /* Lane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9030F7071E58E0290039B32A /* Lane.swift */; };
 		9030F70A1E58EC300039B32A /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9030F7091E58EC300039B32A /* Scenario.swift */; };
 		903D0B0E210BC2B6001BFE07 /* T_masked.png in Resources */ = {isa = PBXBuildFile; fileRef = 903D0B0D210BC2B6001BFE07 /* T_masked.png */; };
-		903D0B10210BC914001BFE07 /* customScaleMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903D0B0F210BC914001BFE07 /* customScaleMode.swift */; };
 		905E745D1F24442B00FDE1DB /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905E745C1F24442B00FDE1DB /* CustomAlert.swift */; };
 		905E745F1F2445B400FDE1DB /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905E745E1F2445B400FDE1DB /* Car.swift */; };
 		905E90CE1EEF25C60048736D /* logo 15_1024pt_1x_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 905E90CD1EEF25C60048736D /* logo 15_1024pt_1x_2.png */; };
@@ -29,7 +28,6 @@
 		9030F7071E58E0290039B32A /* Lane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lane.swift; sourceTree = "<group>"; };
 		9030F7091E58EC300039B32A /* Scenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
 		903D0B0D210BC2B6001BFE07 /* T_masked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = T_masked.png; path = "../../../Images and artwork/T_masked.png"; sourceTree = "<group>"; };
-		903D0B0F210BC914001BFE07 /* customScaleMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customScaleMode.swift; sourceTree = "<group>"; };
 		905E745C1F24442B00FDE1DB /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		905E745E1F2445B400FDE1DB /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		905E90CD1EEF25C60048736D /* logo 15_1024pt_1x_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo 15_1024pt_1x_2.png"; path = "../../../Images and artwork/logos/logo 7/logo 15_1024pt_1x_2.png"; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 				905E745E1F2445B400FDE1DB /* Car.swift */,
 				905E745C1F24442B00FDE1DB /* CustomAlert.swift */,
 				906BAC8A1DF9A28A00AC3D5D /* GameScene.swift */,
-				903D0B0F210BC914001BFE07 /* customScaleMode.swift */,
 				906BAC8C1DF9A28A00AC3D5D /* GameViewController.swift */,
 				906BAC8E1DF9A28A00AC3D5D /* Main.storyboard */,
 				906BAC911DF9A28A00AC3D5D /* Assets.xcassets */,
@@ -193,7 +190,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				903D0B10210BC914001BFE07 /* customScaleMode.swift in Sources */,
 				9030F7081E58E0290039B32A /* Lane.swift in Sources */,
 				906BAC8B1DF9A28A00AC3D5D /* GameScene.swift in Sources */,
 				906BAC8D1DF9A28A00AC3D5D /* GameViewController.swift in Sources */,
@@ -342,6 +338,7 @@
 				INFOPLIST_FILE = SpeederTap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Samuel.Hoffmann.TicketTap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -360,6 +357,7 @@
 				INFOPLIST_FILE = SpeederTap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Samuel.Hoffmann.TicketTap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

@@ -561,7 +561,6 @@ class GameScene: SKScene {
         if(difficulty == 0){
             
             highscoreNodeLabel.text = "\(easyHighscore)"
-            //highscoreNodeLabel.fontColor = UIColor(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
             highscoreNodeLabel.fontColor = UIColor(red: 0/255, green: 196/255, blue: 37/255, alpha: 1)
             
         }else if(difficulty == 1){
@@ -796,6 +795,18 @@ class GameScene: SKScene {
             
             versionUpdateHandler()
             
+        }else if(current == 2.0){
+            
+            UserDefaults.standard.set(2.1, forKey: "VersionNumber")
+            
+            difficulty = 1
+            uploadData()
+            downloadData()
+            
+            print("Log: updated 2.1")
+            
+            versionUpdateHandler()
+            
         }else{
             //all up to date
             
@@ -810,6 +821,10 @@ class GameScene: SKScene {
                     alertCount += 1
                     
                     alert = CustomAlert(UpdateVersion: current)
+                    
+                    if current == 2.1 {
+                        alert.name = "notification_4"
+                    }
                     
                     addChild(alert)
                     
@@ -1812,7 +1827,7 @@ class GameScene: SKScene {
                 
                 alertCount += 1
                 
-                alert = CustomAlert(ImageNamed: "notification_\(Int(arc4random_uniform(3)) + 1)")
+                alert = CustomAlert(ImageNamed: "notification_\(Int(arc4random_uniform(4)) + 1)")
                 
                 addChild(alert)
                 
@@ -1836,6 +1851,14 @@ class GameScene: SKScene {
             
             alertCount -= 1
             alert.alpha = 0
+            
+            if alert.name == "notification_4"{
+                // crude and dirty open to RGBA app page
+                let myUrl = "https://apps.apple.com/us/app/id1406870365"
+                if let url = URL(string: "\(myUrl)"), !url.absoluteString.isEmpty {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }
             
             if(alertCount == 0){
                 Scenario.inAlert = false
@@ -1890,16 +1913,9 @@ class GameScene: SKScene {
     //                                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showLeaderboard"), object: nil)
                                     
                                         
-                                        
-                                        let faceBookhooks = "mailto:samuelhoffmann.development%40gmail.com"
-                                        let facebookURl = NSURL(string: faceBookhooks)
-                                        if UIApplication.shared.canOpenURL(facebookURl! as URL)
-                                        {
-                                            UIApplication.shared.openURL(facebookURl! as URL)
-                                            
-                                        } else {
-                                            //redirect to safari because the user doesn't have Instagram
-                                            UIApplication.shared.openURL(NSURL(string: "mailto:samuelhoffmann.development%40gmail.com")! as URL)
+                                        let myUrl = "mailto:samuelhoffmann.development%40gmail.com"
+                                        if let url = URL(string: "\(myUrl)"), !url.absoluteString.isEmpty {
+                                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
                                         }
                                         
                                         
@@ -1907,32 +1923,20 @@ class GameScene: SKScene {
                                         //open facebook
                                         facebookButton.setScale(0.35)
                                         //clearAppData()
-                                        let faceBookhooks = "https://www.facebook.com/TicketTapApp"
-                                        let facebookURl = NSURL(string: faceBookhooks)
-                                        if UIApplication.shared.canOpenURL(facebookURl! as URL)
-                                        {
-                                            UIApplication.shared.openURL(facebookURl! as URL)
-                                            
-                                        } else {
-                                            //redirect to safari because the user doesn't have Instagram
-                                            UIApplication.shared.openURL(NSURL(string: "https://www.facebook.com/")! as URL)
-                                        }
                                         
+                                        let myUrl = "https://www.facebook.com/TicketTapApp"
+                                        if let url = URL(string: "\(myUrl)"), !url.absoluteString.isEmpty {
+                                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                                        }
                                         
                                         
                                     }else if(joe.name == "twitterButton"){
                                         //open twitter
                                         twitterButton.setScale(0.35)
                                         
-                                        let twitterhooks = "https://twitter.com/SamuelHHoffmann"
-                                        let twitterURL = NSURL(string: twitterhooks)
-                                        if UIApplication.shared.canOpenURL(twitterURL! as URL)
-                                        {
-                                            UIApplication.shared.openURL(twitterURL! as URL)
-                                            
-                                        } else {
-                                            //redirect to safari because the user doesn't have Instagram
-                                            UIApplication.shared.openURL(NSURL(string: "https://twitter.com/")! as URL)
+                                        let myUrl = "https://twitter.com/SamuelHHoffmann"
+                                        if let url = URL(string: "\(myUrl)"), !url.absoluteString.isEmpty {
+                                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
                                         }
                                         
                                     }else{
@@ -2471,8 +2475,6 @@ class GameScene: SKScene {
     
     func sendCar(speed: Int, forever: Bool, police: Bool, demo: Bool){
         
-        
-        
         self.carAmount = 0
         
         if(demo == true){
@@ -2485,10 +2487,6 @@ class GameScene: SKScene {
         
         spawn = SKAction.run({
             () in
-            
-            
-            
-            
             
             if(self.carAmount == 7){
                 
@@ -2808,6 +2806,8 @@ class GameScene: SKScene {
         print("speed limit is \(speedlimit)")
         
         random += Int(speedlimit - 15) //  speedlimit -15 < random < speedlimit +15
+        
+        random = random + (5*(4-self.delayTime))
         
         if random > max {
             random = max - 5

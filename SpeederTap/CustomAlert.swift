@@ -28,6 +28,8 @@ class CustomAlert: SKNode {
     @objc init(ImageNamed: String) {
         super.init()
         
+        self.name = ImageNamed
+        
         box = SKSpriteNode(imageNamed: "AlertBox")
         box.setScale(0.40)
         box.position = CGPoint(x: 0, y: 0)

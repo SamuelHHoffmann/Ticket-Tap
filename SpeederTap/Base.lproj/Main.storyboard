@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zMP-iv-ZLM">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="30" y="53.5" width="315" height="560"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zMP-iv-ZLM" secondAttribute="height" multiplier="375:667" id="oBe-z5-f1O"/>
                                 </constraints>
@@ -27,8 +25,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zMP-iv-ZLM" firstAttribute="trailing" secondItem="jTR-rQ-G77" secondAttribute="trailing" id="0Qn-7I-cJD"/>
-                            <constraint firstItem="zMP-iv-ZLM" firstAttribute="leading" secondItem="jTR-rQ-G77" secondAttribute="leading" id="LlS-eC-tff"/>
+                            <constraint firstItem="zMP-iv-ZLM" firstAttribute="trailing" secondItem="jTR-rQ-G77" secondAttribute="trailing" constant="-30" id="0Qn-7I-cJD"/>
+                            <constraint firstItem="zMP-iv-ZLM" firstAttribute="leading" secondItem="jTR-rQ-G77" secondAttribute="leading" constant="30" id="LlS-eC-tff"/>
                             <constraint firstItem="zMP-iv-ZLM" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" id="Wfz-5o-sPz"/>
                             <constraint firstItem="zMP-iv-ZLM" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="avd-B1-rdB"/>
                         </constraints>
